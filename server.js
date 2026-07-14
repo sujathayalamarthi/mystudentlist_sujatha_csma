@@ -51,7 +51,7 @@ app.put('/students/:id', async (req, res) => {
     delete data.id;
     
     await studentsCollection.updateOne(
-      { id: parseInt(id) }, // FIXED: studentsCollection + parseInt
+      { id: parseInt(id) }, 
       { $set: data }
     )
     res.json({success: true})
